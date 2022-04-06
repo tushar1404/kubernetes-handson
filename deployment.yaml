@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-express-sample
+  labels:
+    app: node-express-sample
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-express-sample
+  template:
+    metadata:
+      labels:
+        app: node-express-sample
+    spec:
+      containers:
+      - name: node-express-sample
+        image: gcr.io/master-dev-253408/node-express-sample:v2
+        env:
+          - name: APP_PORT
+            value: "4000"
+        resources:
+          requests:
+            cpu: 250m
+            memory: 512Mi
+          limits:
+            cpu: 250m
+            memory: 512Mi
