@@ -9,7 +9,7 @@ metadata:
 spec:
   containers:
   - name: node-express-sample
-    image: gcr.io/master-dev-253408/node-express-sample:v2
+    image: tusharlt/tushar-lt:node-express-sample
     env:
       - name: APP_PORT
         value: "4000"
